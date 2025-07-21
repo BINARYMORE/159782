@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #f4f8fb;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin: 0;
+    padding-top: 80px; 
+}
+
+html, body {
+  height: 100%;      
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  display: none;
+}
+
+.menu-label {
+  display: none;
+  z-index: 1001;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: #fff;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #00897B;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: #00897B;
+    margin-left: 4rem;
+    font-weight: 600;
+    transition: 0.6s ease;
+    border-bottom: 3px solid transparent;
+}
+
+
+@media (max-width: 995px) {
+  .menu-label {
+    display: block;
+  }
+
+  .menu-icono {
+    display: block;
+    width: 28px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #00897B;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    z-index: 1000;
+  }
+
+  #menu:checked ~ .navbar {
+    display: flex;
+  }
+
+  #menu:checked .menu-label {
+    display: none;
+  }
+
+  .navbar a {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+  }
+
+  .navbar a:hover {
+    color: #fff;
+  }
+}
+
+.dashboard-bar {
+    margin-top: 100px;
+    background-color: #00695C;
+    color: #ffff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 150px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #E0F2F1;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+}
+
+form select,
+form input[type="text"],
+form input[type="url"] {
+    padding: 10px;
+    font-size: 1.6rem;
+    border: 1px solid #E0F2F1;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+form select:focus,
+form input[type="text"]:focus,
+form input[type="url"]:focus {
+    border-color: #00897B;
+    outline: none;
+}
+
+form button {
+    background-color: #00897B;
+    color: white;
+    padding: 12px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #00695C;
+}
+
+.material-cards {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.material-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #00897B;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.material-card h4 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.material-card p {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.material-card a {
+    color: #00695C;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.material-card a:hover {
+    text-decoration: underline;
+}
+
+.material-card p:last-child {
+    margin-top: 15px;
+}
+
+.material-card p:last-child a {
+    margin-right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.material-card p:last-child a:hover {
+    color: #00897B;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .dashboard-bar {
+        padding-left: 20px;
+        font-size: 1.8rem;
+        height: 50px;
+    }
+
+    form select,
+    form input[type="text"],
+    form input[type="url"],
+    form button {
+        font-size: 1.4rem;
+    }
+
+    .material-card h4 {
+        font-size: 1.8rem;
+    }
+
+    .material-card p,
+    .material-card p:last-child a {
+        font-size: 1.4rem;
+    }
+}

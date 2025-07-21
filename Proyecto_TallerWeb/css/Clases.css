@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #f4f8fb;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    margin: 0;
+    padding-top: 80px; 
+}
+
+html, body {
+  height: 100%;      
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  display: none;
+}
+
+.menu-label {
+  display: none;
+  z-index: 1001;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: #fff;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: #000000;
+    margin-left: 4rem;
+    font-weight: 600;
+    transition: 0.6s ease;
+    border-bottom: 3px solid transparent;
+}
+
+
+@media (max-width: 995px) {
+  .menu-label {
+    display: block;
+  }
+
+  .menu-icono {
+    display: block;
+    width: 28px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #737272;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    z-index: 1000;
+  }
+
+  #menu:checked ~ .navbar {
+    display: flex;
+  }
+
+  #menu:checked .menu-label {
+    display: none;
+  }
+
+  .navbar a {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+  }
+
+  .navbar a:hover {
+    color: #fff;
+  }
+}
+
+.dashboard-bar {
+    margin-top: 100px;
+    background-color: #000000;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 150px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+
+.contenedor {
+    padding: 20px;
+    margin-top: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: #121212;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.card p {
+    font-size: 1.4rem;
+    color: #121212;
+}
+
+.card .profesor {
+    font-size: 1.3rem;
+    color: #121212;
+}
+
+.progreso {
+    background: #e0e0e0;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 4px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.contenidos-cursos {
+    margin-top: 40px;
+}
+
+.contenido-curso {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.acordeon {
+    background-color: #2C2C2C;
+    color: white;
+    cursor: pointer;
+    padding: 14px 18px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.acordeon:hover {
+    background-color: #4F4F4F;
+}
+
+.panel {
+    padding: 15px 20px;
+    display: none;
+    background-color: #E0E0E0;
+    border-left: 5px solid #2C2C2C;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.panel p {
+    font-size: 1.4rem;
+    color: #2C2C2C;
+    margin-bottom: 10px;
+}
+
+.descarga {
+    background: #2C2C2C;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 12px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.descarga:hover {
+    background: #121212;
+}
+
+@media (max-width: 600px) {
+
+  .dashboard-bar {
+    font-size: 1.4rem;
+    padding-left: 1.5rem;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .contenedor {
+    padding: 15px;
+  }
+
+  .cursos {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .acordeon {
+    font-size: 1.4rem;
+  }
+
+  .panel p {
+    font-size: 1.3rem;
+  }
+
+  .descarga {
+    font-size: 1.1rem;
+  }
+
+}

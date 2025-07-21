@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmar Pago</title>
+  <link rel="stylesheet" href="css/confirmar_pago.css" />
+</head>
+<body>
+  <div class="pago-container">
+    <div class="formulario">
+      <h2>Confirmar Plan y Pago</h2>
+      <form action="php/pago_completo.php" method="POST">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="plan">Selecciona tu Plan</label>
+        <select name="plan" id="plan" required onchange="actualizarPrecio()">
+          <option value="" disabled selected>-- Seleccionar --</option>
+          <option value="Basico">Básico</option>
+          <option value="Intermedio">Intermedio</option>
+          <option value="Premium">Premium</option>
+        </select>
+
+        <label>Método de pago:</label>
+        <div class="metodos">
+          <label><input type="radio" name="metodo_pago" value="BCP" required> BCP</label>
+          <label><input type="radio" name="metodo_pago" value="BBVA"> BBVA</label>
+          <label><input type="radio" name="metodo_pago" value="Scotiabank"> Scotiabank</label>
+          <label><input type="radio" name="metodo_pago" value="Interbank"> Interbank</label>
+        </div>
+
+        <div class="resumen">
+          <h3>Resumen de pago</h3>
+          <p id="valor"><strong>Valor:</strong> $0.00</p>
+          <hr />
+          <p class="total"><strong>Total: $<span id="total">0.00</span></strong></p>
+        </div>
+
+        <button type="submit">Pagar Ahora</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function actualizarPrecio() {
+      const plan = document.getElementById('plan').value;
+      let precio = 0;
+
+      switch (plan) {
+        case 'Basico': precio = 250; break;
+        case 'Intermedio': precio = 300; break;
+        case 'Premium': precio = 350; break;
+      }
+
+      document.getElementById('valor').innerHTML = `<strong>Valor:</strong> $${precio}.00`;
+      document.getElementById('total').textContent = `${precio}.00`;
+    }
+  </script>
+</body>
+</html>

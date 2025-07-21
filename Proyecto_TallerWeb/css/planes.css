@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #071A2F;
+    font-family: "Poppins", sans-serif;
+    color: #ffff;
+    padding-top: 10rem;
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icono {
+  display: none;
+}
+
+.menu-label {
+  display: none;
+  z-index: 1001;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: #010B12;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #0FF0FC;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: #0FF0FC;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.6s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #ffff;
+    border-bottom: 3px solid #ffff;
+}
+
+@media (max-width: 995px) {
+  .menu-label {
+    display: block;
+  }
+
+  .menu-icono {
+    display: block;
+    width: 28px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #010B12;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    z-index: 1000;
+  }
+
+  #menu:checked ~ .navbar {
+    display: flex;
+  }
+
+  #menu:checked .menu-label {
+    display: none;
+  }
+
+  .navbar a {
+    font-size: 1.8rem;
+    color: #0FF0FC;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+  }
+
+  .navbar a:hover {
+    color: #fff;
+  }
+}
+
+.section_container {
+    background-color: #071A2F; 
+    padding: 5rem 2rem;
+}
+
+.price_grid{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price_card{
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #04121F;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.price_card:hover{
+    background-color: #04121F;
+    border-color: #0FF0FC;
+}
+
+.price_card_content {
+    flex: 1;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.price_card h4{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.price_card h3{
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.price_card p{
+    margin-bottom: 0.75rem;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.price_btn {
+    display: inline-block;
+    background-color: #0FF0FC;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.price_btn:hover {
+    background-color: #11d9e4; 
+}
+.section_header {
+    text-align: center;
+    font-size: 3rem; 
+    color: #FFFFFF;
+    margin-bottom: 1.5rem;
+}
+
+.section_subheader {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #CCCCCC;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-txt{
+    text-align: center;
+    padding: 45px;
+    background-color: #010B12;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .section_container {
+        padding: 3rem 1.5rem;
+    }
+
+    .section_header {
+        font-size: 2.4rem;
+    }
+
+    .section_subheader {
+        font-size: 1.4rem;
+    }
+
+    .price_grid {
+        grid-template-columns: 1fr; /* una sola columna */
+        gap: 2rem;
+    }
+
+    .price_card {
+        padding: 2rem 1.5rem;
+    }
+}
